@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const taskList = document.getElementById('taskList');
     const addBtn = document.querySelector('.add-btn');
     const noTasksText = document.querySelector('.no-tasks-text');
+    const deleteAllBtn = document.querySelector('.delete-all-btn');
 
     function updateDateTime() {
         const now = new Date();
@@ -51,10 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         checkBox.type = 'checkbox';
         checkBox.checked = completed;
         checkBox.addEventListener('change', () => {
-            console.log(`Checkbox changed: ${checkBox.checked}`); // Debugging line
             taskSpan.classList.toggle('completed', checkBox.checked);
-            taskSpan.offsetWidth; // Force reflow
-            console.log(taskSpan.classList); // Debugging line
             saveTasks();
         });
 
@@ -100,6 +98,12 @@ document.addEventListener('DOMContentLoaded', () => {
             addTask(taskText);
             taskInput.value = '';
         }
+    });
+
+    deleteAllBtn.addEventListener('click', () => {
+        taskList.innerHTML = '';
+        hideNoTasksText();
+        saveTasks();
     });
 
     updateDateTime();
