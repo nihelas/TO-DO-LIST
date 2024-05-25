@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAILY PLANNER</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">DAILY PLANNER</h1>
+            <hr class="line">
+            <div class="date-time">
+                <div>DATE <span id="date"></span></div>
+                <div>TIME <span id="time"></span></div>
+            </div>
+        </header>
+        <div class="main-content">
+            <div class="input-container">
+                <input type="text" id="taskInput" placeholder="What’s your plan for the day?">
+                <button class="add-btn">+</button>
+            </div>
+            <div class="tasks-container">
+                <div class="input-text">Things to do...</div>
+                <div class="no-tasks-text">Woohoo, no work for today!</div>
+                <ul class="task-list" id="taskList"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
